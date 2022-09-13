@@ -1,0 +1,28 @@
+{
+  "_": "Missing Localizations: 0",
+
+  "_": "->------------------------]  Game Elements  [------------------------<-",
+
+  "block.kuayue.cr_logo": "China Railway Logo",
+  "block.kuayue.cr_logo": "中国铁路路徽",
+  "block.kuayue.clay_slab": "clay slab",
+  "block.kuayue.clay_stairs": "clay stairs",
+  "block.kuayue.panel_25g_original_bottom": "original color 25G cabin bottom panel",
+  "block.kuayue.panel_25g_original_mid": "original color 25G cabin middle panel",
+  "block.kuayue.panel_25g_original_window": "original color 25G cabin window",
+  "block.kuayue.original_25g_door":"original color 25G cabin door",
+  "block.kuayue.panel_25g_original_top": "original color 25G cabin up panel",
+  "block.kuayue.smooth_quartz_panel_half": "平滑石英竖半砖",
+  "block.kuayue.smooth_quartz_panel_4": "平滑石英竖半砖",
+  "block.kuayue.smooth_quartz_panel_2": "平滑石英竖半砖",
+  "block.kuayue.smooth_quartz_angle_22_up": "平滑石英半坡",
+  "block.kuayue.pantograph": "pantograph",
+
+  "item.kuayue.train_diet_1": "Train Meal A",
+  "item.kuayue.ca_25t": "Dining Car CA25T",
+
+  "item.kuayue.train_diet_1.tooltip": "No one really likes to eat train meals.....(vomit)",
+
+  "itemGroup.item_group_main": "LeapEra Struct",
+  "itemGroup.item_group_diet": "LeapEra Foods"
+}

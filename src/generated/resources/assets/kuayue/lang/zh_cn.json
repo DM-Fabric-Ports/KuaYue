@@ -1,0 +1,29 @@
+{
+  "_": "Missing Localizations: 0",
+
+  "_": "->------------------------]  Game Elements  [------------------------<-",
+
+  "block.kuayue.cr_logo": "中国铁路路徽",
+  "block.kuayue.clay_slab": "黏土台阶",
+  "block.kuayue.clay_stairs": "黏土楼梯",
+
+  "block.kuayue.panel_25g_original_bottom": "原色25G车厢下厢板",
+  "block.kuayue.panel_25g_original_mid": "原色25G车厢中厢板",
+  "block.kuayue.panel_25g_original_window": "原色25G车厢窗户",
+  "block.kuayue.panel_25g_original_top": "原色25G车厢上厢板",
+  "block.kuayue.original_25g_door":"原色25G车厢门",
+  "block.kuayue.smooth_quartz_panel_half": "平滑石英竖半砖",
+  "block.kuayue.smooth_quartz_panel_4": "平滑石英竖半砖",
+  "block.kuayue.smooth_quartz_panel_2": "平滑石英竖半砖",
+  "block.kuayue.smooth_quartz_angle_22_up": "平滑石英半坡",
+  "block.kuayue.pantograph": "受电弓",
+
+  "item.kuayue.train_diet_1": "火车餐A",
+  "item.kuayue.ca_25t": "餐车25T",
+
+
+  "item.kuayue.train_diet_1.tooltip": "不会真有人喜欢吃火车餐吧，不会吧不会吧",
+
+  "itemGroup.item_group_main": "跨越时代·结构体",
+  "itemGroup.item_group_diet": "跨越时代·餐饮"
+}
