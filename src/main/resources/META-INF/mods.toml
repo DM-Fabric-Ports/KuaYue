@@ -15,27 +15,27 @@ license="MIT"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="kuayue" #mandatory
+modId = "kuayue" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="0.0.2-Kotohime" #mandatory
- # A display name for the mod
-displayName="KuaYue" #mandatory
+version = "0.0.3-KanaAnaberal" #mandatory
+# A display name for the mod
+displayName = "KuaYue" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
-updateJSONURL="http://fairingstudio.com/gxtho" #optional
+#updateJSONURL="http://fairingstudio.com/gxtho" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="http://fairingstudio.com/" #optional
+displayURL = "http://fairingstudio.com/KuaYue" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="kuayue.png" #optional
+logoFile = "kuayue.png" #optional
 # A text field displayed in the mod UI
-credits="苟利国家生死以，岂因祸福避趋之。" #optional
+credits = "苟利国家生死以，岂因祸福避趋之。" #optional
 # A text field displayed in the mod UI
-authors="柳树怪" #optional
+authors = "柳树怪" #optional
 # The description text for the mod (multi line!) (#mandatory)
-description='''
-纪念原色时代
-去你妈的刷绿
+description = '''
+我们似乎还可以听到京沪十三猪连发时，震耳欲聋的柴油机轰鸣声响彻夜空。
+这是一个为机械动力mod而制作的装饰类方块mod（暂定） 因为本人是java初学者，不怎么会编程,还请谅解(^^;;;
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.kuayue]] #optional
