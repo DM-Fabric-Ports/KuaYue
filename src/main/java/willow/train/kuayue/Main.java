@@ -2,22 +2,17 @@ package willow.train.kuayue;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.Mod;
-
-//import willow.train.kuayue.entity.EntityRe8Dimi;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import org.jetbrains.annotations.NotNull;
-import willow.train.kuayue.init.BlockInit;
-//import willow.train.kuayue.init.EntityInit;
-import willow.train.kuayue.init.ItemInit;
-
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
+import willow.train.kuayue.init.BlockInit;
+import willow.train.kuayue.init.ItemInit;
 import willow.train.kuayue.tabs.DietTab;
 import willow.train.kuayue.tabs.MainTab;
 
@@ -52,10 +47,13 @@ public class Main {
         //KUAYUE_DIET.setBackgroundImage(new ResourceLocation("kuayue","textures/item/ca_25t.png"));
     }
 
-    protected void clientSetup(FMLClientSetupEvent fmlClientSetupEvent){
-        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25G_ORIGINAL_WINDOW.get(), RenderType.translucent() );
-        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25G_ORIGINAL_DOOR.get(), RenderType.translucent() );
-        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANTOGRAPH.get(), RenderType.translucent() );
+    protected void clientSetup(FMLClientSetupEvent fmlClientSetupEvent) {
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25B_ORIGINAL_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25G_ORIGINAL_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25G_ORIGINAL_DOOR.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25K_ORIGINAL_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25T_ORIGINAL_WINDOW.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.PANTOGRAPH.get(), RenderType.translucent());
     }
     public static void setup() {
         IEventBus bus = MinecraftForge.EVENT_BUS;
