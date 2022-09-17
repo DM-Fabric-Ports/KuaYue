@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "kuayue:original_25g_door"
+    "kuayue:original_25b_door",
+    "kuayue:original_25g_door",
+    "kuayue:original_25k_door",
+    "kuayue:original_25t_door"
   ]
 }

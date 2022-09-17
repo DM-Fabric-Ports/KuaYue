@@ -11,7 +11,6 @@ public class TrainDoorBlock extends DoorBlock {
     public TrainDoorBlock(Properties pProperties) {
         super(pProperties);
     }
-
     @Override
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
         return true;
