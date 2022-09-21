@@ -10,8 +10,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import willow.train.kuayue.Util.HorizontalBlockBase;
 
 public class PanelBlock4 extends HorizontalBlockBase {
-    private static VoxelShape shape;
-    protected static final float AABB_OFFSET = 3.0F;
     protected static final VoxelShape SOUTH_AABB = Block.box(0.0D, 0.0D, 12, 16, 16, 16);
     protected static final VoxelShape WEST_AABB = Block.box(0, 0.0D, 0.0D, 4, 16.0D, 16.0D);
     protected static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 4);
