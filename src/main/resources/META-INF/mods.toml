@@ -31,7 +31,7 @@ logoFile = "kuayue.png" #optional
 # A text field displayed in the mod UI
 credits = "苟利国家生死以，岂因祸福避趋之。" #optional
 # A text field displayed in the mod UI
-authors = "柳树怪" #optional
+authors = "柳树怪,Carole"#optional
 # The description text for the mod (multi line!) (#mandatory)
 description = '''
 我们似乎还可以听到京沪十三猪连发时，震耳欲聋的柴油机轰鸣声响彻夜空。
