@@ -13,7 +13,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.NotNull;
 import willow.train.kuayue.init.BlockInit;
 import willow.train.kuayue.init.ItemInit;
+import willow.train.kuayue.tabs.CatenaryTab;
 import willow.train.kuayue.tabs.DietTab;
+import willow.train.kuayue.tabs.GroundTab;
 import willow.train.kuayue.tabs.MainTab;
 
 @Mod("kuayue")
@@ -34,6 +36,17 @@ public class Main {
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ItemInit.CA_25T.get());
         }
+    };
+    public static final CatenaryTab KUAYUE_CATENARY = new CatenaryTab(MOD_ID) {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public @NotNull ItemStack makeIcon() { return new ItemStack(BlockInit.Catenary_Pole.get());}
+    };
+
+    public static final GroundTab KUAYUE_GROUND = new GroundTab(MOD_ID) {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public @NotNull ItemStack makeIcon() { return new ItemStack(BlockInit.Station_Entrance_Signal.get());}
     };
 
 
@@ -63,6 +76,10 @@ public class Main {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CARPORT_25BGZK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.CARPORT_25T.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PANTOGRAPH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.Catenary_Pole.get(),RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.Catenary_Grid.get(),RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.Station_Entrance_Signal.get(),RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.No_Double_Pantograph.get(),RenderType.translucent());
     }
     public static void setup() {
         IEventBus bus = MinecraftForge.EVENT_BUS;
