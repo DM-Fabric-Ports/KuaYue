@@ -254,6 +254,30 @@ public class BlockInit {
             () -> new TrainSignBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
                     new Item.Properties().tab(Main.KUAYUE_GROUND)));
+    public static final RegistryObject<TrainSignBlock> Switch_Off_Sign = register("switch_off_sign",
+            () -> new TrainSignBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
+
+    public static final RegistryObject<TrainSignBlock> Switch_On_Sign = register("switch_on_sign",
+            () -> new TrainSignBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
+
+    public static final RegistryObject<SignalPoleBlock> Signal_Pole = register("signal_pole",
+            () -> new SignalPoleBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
+
+    public static final RegistryObject<SignalPoleLightBlock> Signal_Pole_Light = register("signal_pole_light",
+            () -> new SignalPoleLightBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
+
+    public static final RegistryObject<CatenaryPoleBlock> Concrete_Pole = register("concrete_pole",
+            () -> new CatenaryPoleBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_CATENARY)));
 
 
 
