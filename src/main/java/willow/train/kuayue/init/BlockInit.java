@@ -238,11 +238,22 @@ public class BlockInit {
 
     //接触网
     //Catenary_Pole
-    public static final RegistryObject<CatenaryPoleBlock> Catenary_Pole = register("catenary_pole",() -> new CatenaryPoleBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f).sound(SoundType.COPPER).requiresCorrectToolForDrops()),object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_CATENARY)));
-    public static final RegistryObject<CatenaryGridBlock> Catenary_Grid = register("catenary_grid",() -> new CatenaryGridBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f).sound(SoundType.COPPER).requiresCorrectToolForDrops()),object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_CATENARY)));
-    public static final RegistryObject<SeatedSignalBlock> Station_Entrance_Signal = register("station_entrance_signal",() -> new SeatedSignalBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f).sound(SoundType.COPPER).requiresCorrectToolForDrops()),object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_GROUND)));
-    public static final RegistryObject<TrainSignBlock> No_Double_Pantograph = register("no_double_pantograph",() -> new TrainSignBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f).sound(SoundType.COPPER).requiresCorrectToolForDrops()),object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_GROUND)));
-
+    public static final RegistryObject<CatenaryPoleBlock> Catenary_Pole = register("catenary_pole",
+            () -> new CatenaryPoleBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_CATENARY)));
+    public static final RegistryObject<CatenaryGridBlock> Catenary_Grid = register("catenary_grid",
+            () -> new CatenaryGridBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_CATENARY)));
+    public static final RegistryObject<SeatedSignalBlock> Station_Entrance_Signal = register("station_entrance_signal",
+            () -> new SeatedSignalBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
+    public static final RegistryObject<TrainSignBlock> No_Double_Pantograph = register("no_double_pantograph",
+            () -> new TrainSignBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
 
 
 

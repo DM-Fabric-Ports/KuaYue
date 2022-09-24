@@ -43,14 +43,18 @@
   "block.kuayue.smooth_quartz_panel_2": "平滑石英竖1/8砖",
   "block.kuayue.smooth_quartz_angle_22_up": "平滑石英半坡",
   "block.kuayue.pantograph": "pantograph",
+  "block.kuayue.catenary_pole": "接触网柱",
+  "block.kuayue.catenary_grid": "接触网支架",
+  "block.kuayue.station_entrance_signal": "进站信号机",
+  "block.kuayue.no_double_pantograph": "no_double_pantograph",
+  
   "item.kuayue.train_diet_1": "Train Meal A",
   "item.kuayue.ca_25t": "Dining Car CA25T",
   "item.kuayue.train_diet_1.tooltip": "No one really likes to eat train meals.....(vomit)",
+
   "itemGroup.item_group_main": "LeapEra Struct",
   "itemGroup.item_group_diet": "LeapEra Foods",
-  "itemGroup.item_group_catenary": "跨越时代·接触网",
-  "itemGroup.item_group_ground": "跨越时代·地面系统",
-  "block.kuayue.catenary_pole": "接触网柱",
-  "block.kuayue.catenary_grid": "接触网支架",
-  "block.kuayue.station_entrance_signal": "进站信号机"
+  "itemGroup.item_group_catenary": "跨越·接触网",
+  "itemGroup.item_group_ground": "跨越·地面系统"
+
 }
