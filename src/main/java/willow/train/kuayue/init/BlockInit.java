@@ -246,7 +246,17 @@ public class BlockInit {
             () -> new CatenaryGridBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
                     new Item.Properties().tab(Main.KUAYUE_CATENARY)));
+
+    public static final RegistryObject<CatenaryGridBlock> Hang_Catenary_Grid = register("hang_catenary_grid",
+            () -> new CatenaryGridBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_CATENARY)));
     public static final RegistryObject<SeatedSignalBlock> Station_Entrance_Signal = register("station_entrance_signal",
+            () -> new SeatedSignalBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
+
+    public static final RegistryObject<SeatedSignalBlock> Shunting_Signal = register("shunting_signal",
             () -> new SeatedSignalBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
                     new Item.Properties().tab(Main.KUAYUE_GROUND)));

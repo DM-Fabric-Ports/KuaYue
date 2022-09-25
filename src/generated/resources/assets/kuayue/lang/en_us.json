@@ -45,7 +45,9 @@
   "block.kuayue.pantograph": "pantograph",
   "block.kuayue.catenary_pole": "钢制接触网柱",
   "block.kuayue.catenary_grid": "接触网支架",
+  "block.kuayue.hang_catenary_grid": "接触网支架(悬吊)",
   "block.kuayue.station_entrance_signal": "进站信号机",
+  "block.kuayue.shunting_signal": "调车信号机",
   "block.kuayue.no_double_pantograph": "no_double_pantograph",
   
   "item.kuayue.train_diet_1": "Train Meal A",
