@@ -66,7 +66,8 @@ minecraft {
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'kuayue'
-
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             mods {
                 kuayue {
                     source sourceSets.main
@@ -83,7 +84,8 @@ minecraft {
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'kuayue'
-
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             mods {
                 kuayue {
                     source sourceSets.main
@@ -149,14 +151,38 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    maven {
+        name = 'tterrag maven'
+        url = 'https://maven.tterrag.com/'
+    }
+    maven {
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
 }
 
 dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.30'
-
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.60'
+    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
+    // at runtime, use the full JEI jar
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
