@@ -49,6 +49,11 @@
   "block.kuayue.station_entrance_signal": "进站信号机",
   "block.kuayue.shunting_signal": "调车信号机",
   "block.kuayue.no_double_pantograph": "禁止双弓",
+  "block.kuayue.switch_off_sign": "断",
+  "block.kuayue.switch_on_sign": "合",
+  "block.kuayue.signal_pole": "信号机柱子",
+  "block.kuayue.signal_pole_light": "信号机(柱)",
+  "block.kuayue.concrete_pole": "混凝土接触网柱",
 
   "item.kuayue.train_diet_1": "火车餐A",
   "item.kuayue.ca_25t": "餐车25T",
@@ -57,13 +62,6 @@
   "itemGroup.item_group_main": "跨越·结构体",
   "itemGroup.item_group_diet": "跨越·餐饮",
   "itemGroup.item_group_catenary": "跨越·接触网",
-  "itemGroup.item_group_ground": "跨越·地面系统",
-  "block.kuayue.switch_off_sign": "断",
-  "block.kuayue.switch_on_sign": "合",
-  "block.kuayue.signal_pole": "信号机柱子",
-  "block.kuayue.signal_pole_light": "信号机(柱)",
-  "block.kuayue.concrete_pole": "混凝土接触网柱",
-  "block.kuayue.tactile_paving_straight": "直盲道",
-  "block.kuayue.tactile_paving_pin": "点盲道"
+  "itemGroup.item_group_ground": "跨越·地面系统"
 
 }
