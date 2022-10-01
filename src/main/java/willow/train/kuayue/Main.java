@@ -59,7 +59,6 @@ public class Main {
         bus.addListener(this::clientSetup);
         //KUAYUE_DIET.setBackgroundImage(new ResourceLocation("kuayue","textures/item/ca_25t.png"));
     }
-
     protected void clientSetup(FMLClientSetupEvent fmlClientSetupEvent) {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25B_ORIGINAL_WINDOW.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25B_ORIGINAL_DOOR.get(), RenderType.translucent());
