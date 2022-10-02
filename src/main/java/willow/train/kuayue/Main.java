@@ -88,6 +88,7 @@ public class Main {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.Concrete_Pole.get(),RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.TactilePavingStraight.get(),RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.TactilePavingPin.get(),RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.FlourescentLight.get(),RenderType.translucent());
     }
     public static void setup() {
         IEventBus bus = MinecraftForge.EVENT_BUS;

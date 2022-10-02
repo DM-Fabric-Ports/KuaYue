@@ -64,6 +64,8 @@
   "block.kuayue.signal_pole_light": "信号机(柱)",
   "block.kuayue.concrete_pole": "混凝土接触网柱",
   "block.kuayue.tactile_paving_straight": "直盲道",
-  "block.kuayue.tactile_paving_pin": "点盲道"
+  "block.kuayue.tactile_paving_pin": "点盲道",
+  "block.kuayue.flourescent_light": "日光灯"
+
 
 }
