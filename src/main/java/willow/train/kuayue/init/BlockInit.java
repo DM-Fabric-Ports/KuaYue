@@ -301,7 +301,7 @@ public class BlockInit {
 
     public static final RegistryObject<FlourescentLightBlock> FlourescentLight = register("flourescent_light",
             () -> new FlourescentLightBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
-                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion().lightLevel(state -> 15)),object -> () -> new BlockItem(object.get(),
                     new Item.Properties().tab(Main.KUAYUE_GROUND)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name,
