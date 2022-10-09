@@ -89,6 +89,10 @@ public class BlockInit {
             () -> new TopPanelSlabBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_MAIN)));
+    public static final RegistryObject<Train25GLadderBlock> LADDER_25G_ORIGIINAL = register("ladder_25g_original",
+            () -> new Train25GLadderBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_MAIN)));
 
     //25K
 
