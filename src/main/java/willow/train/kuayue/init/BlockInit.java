@@ -378,6 +378,11 @@ public class BlockInit {
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion().lightLevel(state -> 15)),object -> () -> new BlockItem(object.get(),
                     new Item.Properties().tab(Main.KUAYUE_GROUND)));
 
+    public static final RegistryObject<MegaPhoneBlock> MEGAPHONE = register("megaphone",
+            () -> new MegaPhoneBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_GROUND)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(final String name,
                                                                      final Supplier<? extends T> block) {
         return BLOCKS.register(name, block);
