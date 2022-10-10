@@ -13,6 +13,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.NotNull;
 import willow.train.kuayue.init.BlockInit;
 import willow.train.kuayue.init.ItemInit;
+import willow.train.kuayue.sounds.ModSounds;
 import willow.train.kuayue.tabs.CatenaryTab;
 import willow.train.kuayue.tabs.DietTab;
 import willow.train.kuayue.tabs.GroundTab;
@@ -55,6 +56,7 @@ public class Main {
         //添加物品，方块的初始化信息
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
+        ModSounds.register(bus);
         MinecraftForge.EVENT_BUS.register(this);
         bus.addListener(this::clientSetup);
         //KUAYUE_DIET.setBackgroundImage(new ResourceLocation("kuayue","textures/item/ca_25t.png"));
