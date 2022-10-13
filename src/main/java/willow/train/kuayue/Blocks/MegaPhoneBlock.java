@@ -2,7 +2,6 @@ package willow.train.kuayue.Blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -17,8 +16,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import willow.train.kuayue.Util.HorizontalBlockBase;
 import willow.train.kuayue.sounds.ModSounds;
-
-import java.util.Random;
 
 public class MegaPhoneBlock extends HorizontalBlockBase {
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
@@ -43,31 +40,28 @@ public class MegaPhoneBlock extends HorizontalBlockBase {
         level.playSound((Player) null, pos, ModSounds.CROSSING_RINGING.get(), SoundSource.BLOCKS, 10F, 1f);
     }
 
-    @Override
-    public void animateTick(BlockState pState,  Level pLevel,  BlockPos pPos, Random pRandom) {
 
-    }
 
-    @Override
-    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, Random pRandom) {
-        if(pState.getValue(POWERED)){
-
-            int mTick =  pState.getValue(TICK);
-            pLevel.addParticle(ParticleTypes.NOTE, (double)pPos.getX() +1d, (double)pPos.getY() + 1.2D, (double)pPos.getZ() + 0.5D, (double)1 / 24.0D, 0.0D, 0.0D);
-            if( mTick > 1 ) {
-                 pLevel.addParticle(ParticleTypes.NOTE, (double)pPos.getX() -(double)mTick, (double)pPos.getY() + 1.2D, (double)pPos.getZ() + 0.5D, (double)1 / 24.0D, 0.0D, 0.0D);
-                pLevel.setBlock(pPos,pState.setValue(TICK,mTick- 1),2);
-            }
-            else{
-
-                //this.playNote(pLevel, pPos);
-                pLevel.addParticle(ParticleTypes.NOTE, (double)pPos.getX() , (double)pPos.getY() + 2D, (double)pPos.getZ() + 0.5D, (double)1 / 24.0D, 0.0D, 0.0D);
-                pLevel.blockEvent(pPos, this, 0, 0);
-                pLevel.setBlock(pPos,pState.setValue(TICK,5),2);
-
-            }
-        }
-    }
+//    @Override
+//    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, Random pRandom) {
+//        if(pState.getValue(POWERED)){
+//
+//            int mTick =  pState.getValue(TICK);
+//            pLevel.addParticle(ParticleTypes.NOTE, (double)pPos.getX() +1d, (double)pPos.getY() + 1.2D, (double)pPos.getZ() + 0.5D, (double)1 / 24.0D, 0.0D, 0.0D);
+//            if( mTick > 1 ) {
+//                 pLevel.addParticle(ParticleTypes.NOTE, (double)pPos.getX() -(double)mTick, (double)pPos.getY() + 1.2D, (double)pPos.getZ() + 0.5D, (double)1 / 24.0D, 0.0D, 0.0D);
+//                pLevel.setBlock(pPos,pState.setValue(TICK,mTick- 1),2);
+//            }
+//            else{
+//
+//                //this.playNote(pLevel, pPos);
+//                pLevel.addParticle(ParticleTypes.NOTE, (double)pPos.getX() , (double)pPos.getY() + 2D, (double)pPos.getZ() + 0.5D, (double)1 / 24.0D, 0.0D, 0.0D);
+//                pLevel.blockEvent(pPos, this, 0, 0);
+//                pLevel.setBlock(pPos,pState.setValue(TICK,5),2);
+//
+//            }
+//        }
+//    }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
