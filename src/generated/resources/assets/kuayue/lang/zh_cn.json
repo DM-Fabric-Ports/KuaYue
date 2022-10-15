@@ -65,6 +65,13 @@
   "block.kuayue.shunting_signal": "调车信号机",
   "block.kuayue.no_double_pantograph": "禁止双弓",
 
+  "block.kuayue.megaphone": "道口扩音器",
+
+  "block.kuayue.widepanel_cr200j_marshalled_mid": "东福绿CR200J拖车窗户",
+  "block.kuayue.panel_cr200j_marshalled_top": "东福绿CR200J拖车上厢板",
+  "block.kuayue.panel_cr200j_marshalled_bottom": "东福绿CR200J拖车下厢板",
+  "block.kuayue.slab_cr200j_marshalled_top": "东福绿CR200J拖车窗户",
+
   "item.kuayue.train_diet_1": "火车餐A",
   "item.kuayue.ca_25t": "餐车25T",
   "item.kuayue.train_diet_1.tooltip": "不会真有人喜欢吃火车餐吧，不会吧不会吧",
@@ -80,7 +87,9 @@
   "block.kuayue.concrete_pole": "混凝土接触网柱",
   "block.kuayue.tactile_paving_straight": "直盲道",
   "block.kuayue.tactile_paving_pin": "点盲道",
-  "block.kuayue.flourescent_light": "日光灯"
+  "block.kuayue.flourescent_light": "日光灯",
+
+  "sounds.kuayue.crossing_ringing": "道口:小心火车"
 
 
 }
