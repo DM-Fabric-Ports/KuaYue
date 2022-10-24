@@ -10,8 +10,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import willow.train.kuayue.Util.HorizontalBlockBase;
 
-import java.util.stream.Stream;
-
 public class PantographBlock extends HorizontalBlockBase {
     private static VoxelShape shape;
     protected static final float AABB_OFFSET = 3.0F;

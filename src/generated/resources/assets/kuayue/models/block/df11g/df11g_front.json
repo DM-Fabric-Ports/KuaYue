@@ -1,0 +1,5 @@
+{
+  "loader": "forge:obj",
+  "model": "kuayue:models/block/df11g/df11g_front.obj",
+  "flip-v": true
+}

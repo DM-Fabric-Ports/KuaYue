@@ -10,12 +10,15 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import willow.train.kuayue.Blocks.*;
 import willow.train.kuayue.Main;
 
 import java.util.function.Function;
 
 public class BlockInit {
+    public static final Logger LOGGER = LoggerFactory.getLogger("KuaYue");
     //注册机
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
             Main.MOD_ID);
@@ -165,6 +168,19 @@ public class BlockInit {
                     .sound(SoundType.NETHER_BRICKS).requiresCorrectToolForDrops()),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_MAIN)));
 
+//    public static final RegistryObject<TrainPanelSignBlock> TRAIN_PANEL_SIGN_BLOCK= register("train_panel_sign_block",
+//            () -> new TrainPanelSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN),WoodTypeInit.TrainPanel),
+//            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_MAIN)));
+
+
+//    public static final RegistryObject<Block> TRAIN_PANEL_SIGN_BLOCK1= registerBlock("train_panel_sign_block1",
+//            () -> new TrainPanelSignBlock2(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN),WoodTypeInit.TrainPanel));
+
+    public static final RegistryObject<Block> TRAIN_PANEL_SIGN_BLOCK = registerBlockWithoutBlockItem("train_panel_sign_block",
+            () -> new TrainPanelSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), WoodTypeInit.TrainPanel));
+
+    public static final RegistryObject<Block> TRAIN_PANEL_SIGN_BLOCK1 = registerBlockWithoutBlockItem("train_panel_sign_block1",
+            () -> new TrainPanelSignBlock2(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), WoodTypeInit.TrainPanel));
     //panel_25t_original_window
     public static final RegistryObject<TrainGlassPanelBlock> PANEL_25T_ORIGINAL_WINDOW = register("panel_25t_original_window",
             () -> new TrainGlassPanelBlock(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.NONE).strength(3.0f)
@@ -405,10 +421,16 @@ public class BlockInit {
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_MAIN)));
 
+    public static final RegistryObject<TrainPanelBlock> DF11G_FRONT = register("df11g_front",
+            () -> new TrainPanelBlock(BlockBehaviour.Properties.of(Material.METAL,MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
+                    new Item.Properties().tab(Main.KUAYUE_MAIN)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name,
                                                                      final Supplier<? extends T> block) {
+        LOGGER.info("rigister block:"+name);
         return BLOCKS.register(name, block);
+
     }
 
 
@@ -416,13 +438,19 @@ public class BlockInit {
                                                                 Function<RegistryObject<T>, Supplier<? extends Item>> item) {
         RegistryObject<T> obj = registerBlock(name, block);
         ITEMS.register(name, item.apply(obj));
+        LOGGER.info("rigister block:"+name);
         return obj;
     }
     private static <T extends Block> RegistryObject<T> register2(final String name, final Supplier<? extends T> block,
                                                                 Function<RegistryObject<T>, Supplier<? extends Item>> item) {
         RegistryObject<T> obj = registerBlock(name, block);
         //ITEMS.register(name, item.apply(obj));
+        LOGGER.info("rigister block:"+name);
         return obj;
     }
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
+    }
+
 }
 
