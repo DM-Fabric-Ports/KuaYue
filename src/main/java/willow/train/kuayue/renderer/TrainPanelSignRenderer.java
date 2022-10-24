@@ -33,7 +33,7 @@ import java.util.Map;
 public class TrainPanelSignRenderer extends SignRenderer {
 
     private static final int LINE_HEIGHT = 10;
-    private static final String STICK = "stick";
+    //private static final String STICK = "stick";
     private static final int BLACK_TEXT_OUTLINE_COLOR = -988212;
     private static final int OUTLINE_RENDER_DISTANCE = Mth.square(16);
     private final Map<WoodType, SignModel> signModels;
@@ -49,7 +49,7 @@ public class TrainPanelSignRenderer extends SignRenderer {
         this.font = pContext.getFont();
     }
 
-
+    @Override
     public void render(SignBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         BlockState blockstate = pBlockEntity.getBlockState();
         pPoseStack.pushPose();
@@ -111,18 +111,18 @@ public class TrainPanelSignRenderer extends SignRenderer {
     public static LayerDefinition createSignLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
-        partdefinition.addOrReplaceChild("sign", CubeListBuilder.create().texOffs(0, 0).addBox(-8, 0, 0F, 16.0F, 16.0F, 1.0F), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("sign", CubeListBuilder.create().texOffs(0, 0).addBox(0, 0, 0F, 16.0F, 16.0F, 1.0F), PartPose.ZERO);
         //partdefinition.addOrReplaceChild("ss1223", CubeListBuilder.create().texOffs(0, 0).addBox(-12.0F, -14.0F, -1.0F, 24.0F, 12.0F, 2.0F), PartPose.ZERO);
-        partdefinition.addOrReplaceChild("stick", CubeListBuilder.create().texOffs(0, 14).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 14.0F, 2.0F), PartPose.ZERO);
+        //partdefinition.addOrReplaceChild("stick", CubeListBuilder.create().texOffs(0, 14).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 14.0F, 2.0F), PartPose.ZERO);
         return LayerDefinition.create(meshdefinition, 64, 32);
     }
 
     private static int getDarkColor(SignBlockEntity pBlockEntity) {
         int i = pBlockEntity.getColor().getTextColor();
-        double d0 = 0.4D;
-        int j = (int)((double) NativeImage.getR(i) * 0.4D);
-        int k = (int)((double)NativeImage.getG(i) * 0.4D);
-        int l = (int)((double)NativeImage.getB(i) * 0.4D);
+        double d0 = 0.8D;
+        int j = (int)((double) NativeImage.getR(i) * d0);
+        int k = (int)((double)NativeImage.getG(i) * d0);
+        int l = (int)((double)NativeImage.getB(i) * d0);
         return i == DyeColor.BLACK.getTextColor() && pBlockEntity.hasGlowingText() ? -988212 : NativeImage.combine(0, l, k, j);
     }
 

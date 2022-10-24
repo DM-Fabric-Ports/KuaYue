@@ -2,26 +2,41 @@ package willow.train.kuayue.Blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import willow.train.kuayue.Util.HorizontalBlockBase;
 
-public class Train25GLadderBlock extends HorizontalBlockBase {
+import javax.annotation.Nullable;
+
+public class Train25GLadderBlock extends DoorBlock {
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
+    public static final EnumProperty<DoorHingeSide> HINGE = BlockStateProperties.DOOR_HINGE;
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+
+    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+    public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     public Train25GLadderBlock(Properties p_49795_) {
 
-
         super(p_49795_);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH)
+                .setValue(OPEN,false).setValue(HINGE,DoorHingeSide.LEFT).setValue(HALF,DoubleBlockHalf.LOWER).setValue(POWERED,false));
     }
 
     protected static final VoxelShape SOUTH_AABB = Shapes.or(Block.box(0.5, 0, 0.5, 15, 1, 9),
@@ -105,6 +120,9 @@ public class Train25GLadderBlock extends HorizontalBlockBase {
         return blockstate.isFaceSturdy(pBlockReader, pPos, pDirection);
     }
 
+
+
+
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         return true;
     }
@@ -123,14 +141,88 @@ public class Train25GLadderBlock extends HorizontalBlockBase {
         }
     }
 
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        BlockState blockstate1 = this.defaultBlockState();
-        blockstate1 = blockstate1.setValue(FACING, pContext.getHorizontalDirection());
-        return blockstate1;
+    private DoorHingeSide getHinge(BlockPlaceContext pContext) {
+        BlockGetter blockgetter = pContext.getLevel();
+        BlockPos blockpos = pContext.getClickedPos();
+        Direction direction = pContext.getHorizontalDirection();
+        BlockPos blockpos1 = blockpos.above();
+        Direction direction1 = direction.getCounterClockWise();
+        BlockPos blockpos2 = blockpos.relative(direction1);
+        BlockState blockstate = blockgetter.getBlockState(blockpos2);
+        BlockPos blockpos3 = blockpos1.relative(direction1);
+        BlockState blockstate1 = blockgetter.getBlockState(blockpos3);
+        Direction direction2 = direction.getClockWise();
+        BlockPos blockpos4 = blockpos.relative(direction2);
+        BlockState blockstate2 = blockgetter.getBlockState(blockpos4);
+        BlockPos blockpos5 = blockpos1.relative(direction2);
+        BlockState blockstate3 = blockgetter.getBlockState(blockpos5);
+        int i = (blockstate.isCollisionShapeFullBlock(blockgetter,
+                blockpos2) ? -1 : 0) + (blockstate1.isCollisionShapeFullBlock(blockgetter, blockpos3) ? -1 : 0)
+                + (blockstate2.isCollisionShapeFullBlock(blockgetter, blockpos4) ? 1 : 0)
+                + (blockstate3.isCollisionShapeFullBlock(blockgetter, blockpos5) ? 1 : 0);
+        //boolean flag = blockstate.is(this) && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER;
+        //boolean flag1 = blockstate2.is(this) && blockstate2.getValue(HALF) == DoubleBlockHalf.LOWER;
+        if (i <= 0) {
+            if (i >= 0) {
+                int j = direction.getStepX();
+                int k = direction.getStepZ();
+                Vec3 vec3 = pContext.getClickLocation();
+                double d0 = vec3.x - (double) blockpos.getX();
+                double d1 = vec3.z - (double) blockpos.getZ();
+                return (j >= 0 || !(d1 < 0.5D)) && (j <= 0 || !(d1 > 0.5D)) && (k >= 0 || !(d0 > 0.5D)) && (k <= 0 || !(d0 < 0.5D)) ? DoorHingeSide.LEFT : DoorHingeSide.RIGHT;
+            } else {
+                return DoorHingeSide.LEFT;
+            }
+        } else {
+            return DoorHingeSide.RIGHT;
+        }
     }
+
+    @Nullable
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection())
+                .setValue(HINGE, this.getHinge(pContext)).setValue(OPEN,false).setValue(HALF,DoubleBlockHalf.LOWER).setValue(POWERED,false);
+    }
+
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING);
+        pBuilder.add(FACING).add(HINGE).add(OPEN).add(HALF).add(POWERED);
+    }
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack) {
+        //pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER), 3);
     }
 
+@Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+
+            pState = pState.cycle(OPEN);
+            pLevel.setBlock(pPos, pState, 10);
+            //pLevel.levelEvent(pPlayer, pState.getValue(OPEN) ? this.getOpenSound() : this.getCloseSound(), pPos, 0);
+            pLevel.gameEvent(pPlayer, this.isOpen(pState) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pPos);
+            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+
+    }
+
+    public boolean isOpen(BlockState pState) {
+        return pState.getValue(OPEN);
+    }
+
+    public void setOpen(@Nullable Entity p_153166_, Level pLevel, BlockState pState, BlockPos pPos, boolean pOpen) {
+        if (pState.is(this) && pState.getValue(OPEN) != pOpen) {
+            pLevel.setBlock(pPos, pState.setValue(OPEN, Boolean.valueOf(pOpen)), 10);
+            //this.playSound(pLevel, pPos, pOpen);
+            pLevel.gameEvent(p_153166_, pOpen ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, pPos);
+        }
+    }
+
+
+
+    public BlockState mirror(BlockState pState, Mirror pMirror) {
+        return pMirror == Mirror.NONE ? pState : pState.rotate(pMirror.getRotation(pState.getValue(FACING))).cycle(HINGE);
+    }
+
+    public BlockState rotate(BlockState pState, Rotation pRotation) {
+        return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
+    }
 }
