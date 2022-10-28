@@ -1,5 +1,7 @@
 package willow.train.kuayue;
 
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -17,10 +19,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import willow.train.kuayue.init.BlockEntitiesInit;
-import willow.train.kuayue.init.BlockInit;
-import willow.train.kuayue.init.ItemInit;
-import willow.train.kuayue.init.WoodTypeInit;
+import willow.train.kuayue.init.*;
 import willow.train.kuayue.renderer.TrainPanelSignRenderer;
 import willow.train.kuayue.sounds.ModSounds;
 import willow.train.kuayue.tabs.CatenaryTab;
@@ -33,6 +32,8 @@ public class Main {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("KuaYue");
     public static final String MOD_ID = "kuayue";
+
+    private static final NonNullSupplier<CreateRegistrate> REGISTRATE = CreateRegistrate.lazy(MOD_ID);
     public static final MainTab KUAYUE_MAIN = new MainTab(MOD_ID) {
         @Override
         @OnlyIn(Dist.CLIENT)
@@ -71,6 +72,10 @@ public class Main {
 
         ModSounds.register(bus);
 
+        KYCreateBlock.register();
+        KYCreateEntities.register();
+        AllModulePartials.init();
+
         bus.addListener(this::setup);
 
         bus.addListener(this::clientSetup);
@@ -98,7 +103,7 @@ public class Main {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25T_MARSHALLED_SKIRT.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.PANEL_25T_MARSHALLED_SKIRT_SIDE.get(), RenderType.translucent());
 
-        //ItemBlockRenderTypes.setRenderLayer(BlockInit.DF11G_FRONT.get(), RenderType.translucent());
+        //bItemBlockRenderTypes.setRenderLayer(BlockInit.DF11G_FRONT.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(BlockInit.WIDEPANEL_CR200J_MARSHALLED_MID.get(), RenderType.translucent());
 
@@ -129,5 +134,7 @@ public class Main {
 
     });
     }
-
+    public static CreateRegistrate registrate() {
+        return REGISTRATE.get();
+    }
 }
