@@ -1,11 +1,13 @@
 package willow.train.kuayue.init;
 
 import com.simibubi.create.foundation.block.BlockStressDefaults;
+import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MaterialColor;
+import willow.train.kuayue.Blocks.DF11GBogeyBlock;
 import willow.train.kuayue.Blocks.DF11GFrontBlock;
 import willow.train.kuayue.Main;
 
@@ -30,5 +32,10 @@ public class KYCreateBlock {
                     .transform(customItemModel())
                     .register();
 
+    public static final BlockEntry<DF11GBogeyBlock> DF11G_BOGEY =
+            REGISTRATE.block("df11g_bogey", p -> new DF11GBogeyBlock(p, true))
+                    .properties(p -> p.color(MaterialColor.PODZOL))
+                    .transform(BuilderTransformers.bogey())
+                    .register();
     public static void register() {}
 }

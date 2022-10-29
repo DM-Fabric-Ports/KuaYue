@@ -6,7 +6,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.foundation.render.CachedBufferer;
 import com.simibubi.create.foundation.render.SuperByteBuffer;
 import com.simibubi.create.foundation.tileEntity.renderer.SafeTileEntityRenderer;
-import com.simibubi.create.foundation.utility.AngleHelper;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -31,16 +30,7 @@ public class DF11GTileEntityRenderer extends SafeTileEntityRenderer<DF11GFrontTi
 
         BlockState blockState = te.getBlockState();
         Direction facing = te.getBlockState().getValue(DF11GFrontBlock.HORIZONTAL_FACING);
-        //Direction.Axis facingAxis = facing.getAxis();
-        //Direction.Axis axis = Direction.Axis.Y;
-        timer++;
-        if(timer>=20){
-            LOGGER.info("facing angle:"+AngleHelper.horizontalAngle(facing)
-            +"\nBS:"+te.getBlockState()
-                    .getValue(DF11GFrontBlock.HORIZONTAL_FACING)+
-                    "\nlight:"+light+
-                    "\npartialTicks:"+partialTicks);
-        }
+
         transformed(AllModulePartials.DF11_FRONT_BLOCK, blockState, facing)
                 .unCentre()
                 .light(light)
@@ -48,9 +38,23 @@ public class DF11GTileEntityRenderer extends SafeTileEntityRenderer<DF11GFrontTi
                 .renderInto(ms, vb);
     }
 
+
+
+    private float D2A(Direction d){
+        return switch (d) {
+            case EAST -> 270;
+            case SOUTH -> 0;
+            case WEST -> 90;
+            default -> 180;
+        };
+    }
     private SuperByteBuffer transformed(PartialModel model, BlockState blockState, Direction facing) {
         return CachedBufferer.partial(model, blockState)
                 .centre()
-                .rotateY(AngleHelper.horizontalAngle(facing));
+                .rotateY(D2A(facing));
+    }
+    @Override
+    public int getViewDistance() {
+        return 128;
     }
 }

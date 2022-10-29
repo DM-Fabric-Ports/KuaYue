@@ -5,6 +5,9 @@ import com.simibubi.create.foundation.tileEntity.TileEntityBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.model.data.IModelData;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
@@ -22,7 +25,11 @@ public class DF11GFrontTileEntity extends SmartTileEntity {
     public void addBehaviours(List<TileEntityBehaviour> behaviours) {
 
     }
-
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    protected AABB createRenderBoundingBox() {
+        return super.createRenderBoundingBox().inflate(2);
+    }
     @Override
     public void onLoad() {
         super.onLoad();
