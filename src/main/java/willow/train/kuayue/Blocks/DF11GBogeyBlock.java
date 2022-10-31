@@ -6,7 +6,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
 import com.simibubi.create.AllBlockPartials;
 import com.simibubi.create.AllBlocks;
-import com.simibubi.create.AllTileEntities;
 import com.simibubi.create.content.contraptions.relays.elementary.ShaftBlock;
 import com.simibubi.create.content.logistics.trains.IBogeyBlock;
 import com.simibubi.create.content.logistics.trains.entity.BogeyInstance;
@@ -15,7 +14,6 @@ import com.simibubi.create.content.logistics.trains.track.StandardBogeyBlock;
 import com.simibubi.create.content.logistics.trains.track.StandardBogeyTileEntity;
 import com.simibubi.create.foundation.block.ITE;
 import com.simibubi.create.foundation.render.CachedBufferer;
-import com.simibubi.create.foundation.utility.AngleHelper;
 import com.simibubi.create.foundation.utility.Iterate;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -32,17 +30,17 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import willow.train.kuayue.init.KYCreateEntities;
 
 import java.util.EnumSet;
 
 public class DF11GBogeyBlock extends StandardBogeyBlock implements IBogeyBlock, ITE<StandardBogeyTileEntity> {
 
-    public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
+   // public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
 
     public DF11GBogeyBlock(Properties p_i48440_1_, boolean large) {
 
@@ -52,9 +50,10 @@ public class DF11GBogeyBlock extends StandardBogeyBlock implements IBogeyBlock, 
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(AXIS);
+        //builder.add(AXIS);
         super.createBlockStateDefinition(builder);
     }
+
     static final EnumSet<Direction> STICKY_X = EnumSet.of(Direction.EAST, Direction.WEST);
     static final EnumSet<Direction> STICKY_Z = EnumSet.of(Direction.SOUTH, Direction.NORTH);
 
@@ -145,10 +144,10 @@ public class DF11GBogeyBlock extends StandardBogeyBlock implements IBogeyBlock, 
                 .scale(1 - 1 / 512f)
                 .light(light)
                 .renderInto(ms, vb);
-        CachedBufferer.partial(AllBlockPartials.BOGEY_PISTON, air)
-                .translate(0, 0, 1 / 4f * Math.sin(AngleHelper.rad(wheelAngle)))
-                .light(light)
-                .renderInto(ms, vb);
+//        CachedBufferer.partial(AllBlockPartials.BOGEY_PISTON, air)
+//                .translate(0, 0, 1 / 4f * Math.sin(AngleHelper.rad(wheelAngle)))
+//                .light(light)
+//                .renderInto(ms, vb);
 
         ms.pushPose();
         CachedBufferer.partial(AllBlockPartials.LARGE_BOGEY_WHEELS, air)
@@ -156,13 +155,23 @@ public class DF11GBogeyBlock extends StandardBogeyBlock implements IBogeyBlock, 
                 .rotateX(wheelAngle)
                 .light(light)
                 .renderInto(ms, vb);
-        CachedBufferer.partial(AllBlockPartials.BOGEY_PIN, air)
-                .translate(0, 1, 0)
+        CachedBufferer.partial(AllBlockPartials.LARGE_BOGEY_WHEELS, air)
+                .translate(0, 1, -2)
                 .rotateX(wheelAngle)
-                .translate(0, 1 / 4f, 0)
-                .rotateX(-wheelAngle)
                 .light(light)
                 .renderInto(ms, vb);
+        CachedBufferer.partial(AllBlockPartials.LARGE_BOGEY_WHEELS, air)
+                .translate(0, 1, 2)
+                .rotateX(wheelAngle)
+                .light(light)
+                .renderInto(ms, vb);
+//        CachedBufferer.partial(AllBlockPartials.BOGEY_PIN, air)
+//                .translate(0, 1, 0)
+//                .rotateX(wheelAngle)
+//                .translate(0, 1 / 4f, 0)
+//                .rotateX(-wheelAngle)
+//                .light(light)
+//                .renderInto(ms, vb);
         ms.popPose();
     }
     @Override
@@ -191,7 +200,7 @@ public class DF11GBogeyBlock extends StandardBogeyBlock implements IBogeyBlock, 
 
     @Override
     public BlockEntityType<? extends StandardBogeyTileEntity> getTileEntityType() {
-        return AllTileEntities.BOGEY.get();
+        return KYCreateEntities.DF11G_BOGEY.get();
     }
 
 
