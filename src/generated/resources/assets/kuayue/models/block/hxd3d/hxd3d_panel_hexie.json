@@ -1,0 +1,24 @@
+{
+	"credit": "Made by WillowKoishi",
+	"texture_size": [32, 32],
+	"textures": {
+		"11": "kuayue:block/hxd3d/hxd3d_side_panel_hexie",
+		"particle": "kuayue:block/hxd3d/hxd3d_side_panel_hexie"
+	},
+	"elements": [
+		{
+			"name": "sidepane4",
+			"from": [-16, 0, 0],
+			"to": [32, 32, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 15, 0.5]},
+			"faces": {
+				"north": {"uv": [0, 4, 6, 7.9375], "texture": "#11"},
+				"east": {"uv": [6.1875, 4.1875, 6, 7.4375], "texture": "#11"},
+				"south": {"uv": [6, 0, 0, 4], "texture": "#11"},
+				"west": {"uv": [6.1875, 0, 6.09375, 1.88672], "texture": "#11"},
+				"up": {"uv": [6.0625, 3.3125, 6.21875, 0.4375], "rotation": 270, "texture": "#11"},
+				"down": {"uv": [6.125, 4.1875, 6.1875, 7.875], "rotation": 90, "texture": "#11"}
+			}
+		}
+	]
+}
