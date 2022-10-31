@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import willow.train.kuayue.Blocks.DF11GFrontBlock;
 import willow.train.kuayue.Blocks.Entities.DF11GFrontTileEntity;
-import willow.train.kuayue.init.AllModulePartials;
 
 public class DF11GTileEntityRenderer extends SafeTileEntityRenderer<DF11GFrontTileEntity> {
     public static final Logger LOGGER = LoggerFactory.getLogger("KuaYue");
@@ -31,11 +30,11 @@ public class DF11GTileEntityRenderer extends SafeTileEntityRenderer<DF11GFrontTi
         BlockState blockState = te.getBlockState();
         Direction facing = te.getBlockState().getValue(DF11GFrontBlock.HORIZONTAL_FACING);
 
-        transformed(AllModulePartials.DF11_FRONT_BLOCK, blockState, facing)
-                .unCentre()
-                .light(light)
-                .translate(0, 0, 0)
-                .renderInto(ms, vb);
+//        transformed(AllModulePartials.DF11_FRONT_BLOCK, blockState, facing)
+//                .unCentre()
+//                .light(light)
+//                .translate(0, 0, 0)
+//                .renderInto(ms, vb);
     }
 
 
