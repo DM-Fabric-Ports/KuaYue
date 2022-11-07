@@ -6,7 +6,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -21,9 +20,11 @@ public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             Main.MOD_ID);
     public static final RegistryObject<Item> CA_25T = register("ca_25t",
-            () -> new Item(new Item.Properties()
-                    //.tab(Main.KUAYUE_DIET)
-            ));
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SERIES_25_LOGOS = register("series25_logos",
+            () -> new Item(new Item.Properties()));
+
     //火车餐1
     public static final RegistryObject<Item> TRAIN_DIET_1 = register("train_diet_1",
             () -> new Food1(new Item.Properties().tab(Main.KUAYUE_DIET).food(
@@ -35,10 +36,10 @@ public class ItemInit {
 //            () -> new SignItem(new Item.Properties().tab(Main.KUAYUE_MAIN),
 //                    BlockInit.TRAIN_PANEL_SIGN_BLOCK.get(),
 //                    BlockInit.TRAIN_PANEL_SIGN_BLOCK1.get()));
-
-    public static final RegistryObject<Item> TRAIN_PANEL_SIGN_ITEM = ITEMS.register("train_panel_sign_item",
-            () -> new SignItem(new Item.Properties().tab(Main.KUAYUE_MAIN).stacksTo(16),
-                    BlockInit.TRAIN_PANEL_SIGN_BLOCK1.get(), BlockInit.TRAIN_PANEL_SIGN_BLOCK.get()));
+//
+//    public static final RegistryObject<Item> TRAIN_PANEL_SIGN_ITEM = ITEMS.register("train_panel_sign_item",
+//            () -> new SignItem(new Item.Properties().tab(Main.KUAYUE_MAIN).stacksTo(16),
+//                    BlockInit.TRAIN_PANEL_SIGN_BLOCK1.get(), BlockInit.TRAIN_PANEL_SIGN_BLOCK.get()));
 
     public static final RegistryObject<Item> DF11G_BOGEY_ITEM = ITEMS.register("df11g_bogey",
             () -> new BlockItem(KYCreateBlock.DF11G_BOGEY.get(),new Item.Properties().tab(Main.KUAYUE_DIET)));

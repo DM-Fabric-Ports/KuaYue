@@ -22,10 +22,7 @@ import org.slf4j.LoggerFactory;
 import willow.train.kuayue.init.*;
 import willow.train.kuayue.renderer.TrainPanelSignRenderer;
 import willow.train.kuayue.sounds.ModSounds;
-import willow.train.kuayue.tabs.CatenaryTab;
-import willow.train.kuayue.tabs.DietTab;
-import willow.train.kuayue.tabs.GroundTab;
-import willow.train.kuayue.tabs.MainTab;
+import willow.train.kuayue.tabs.*;
 
 @Mod("kuayue")
 public class Main {
@@ -40,6 +37,11 @@ public class Main {
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(BlockInit.CR_LOGO.get());
         }
+    };
+    public static final NormalSpeedPassageCarriageTab KUAYUE_NormalSpeedPassageCarriageTab = new NormalSpeedPassageCarriageTab(MOD_ID) {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public @NotNull ItemStack makeIcon() { return new ItemStack(ItemInit.SERIES_25_LOGOS.get());}
     };
     public static final DietTab KUAYUE_DIET = new DietTab(MOD_ID) {
         @Override
@@ -59,6 +61,7 @@ public class Main {
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon() { return new ItemStack(BlockInit.Station_Entrance_Signal.get());}
     };
+
 
 
     public Main() {
