@@ -38,6 +38,11 @@ public class Main {
             return new ItemStack(BlockInit.CR_LOGO.get());
         }
     };
+    public static final LocosTab KUAYUE_LOCOS = new LocosTab(MOD_ID) {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public @NotNull ItemStack makeIcon() { return new ItemStack(ItemInit.LOCO_LOGOS.get());}
+    };
     public static final NormalSpeedPassageCarriageTab KUAYUE_NormalSpeedPassageCarriageTab = new NormalSpeedPassageCarriageTab(MOD_ID) {
         @Override
         @OnlyIn(Dist.CLIENT)
@@ -61,6 +66,7 @@ public class Main {
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon() { return new ItemStack(BlockInit.Station_Entrance_Signal.get());}
     };
+
 
 
 

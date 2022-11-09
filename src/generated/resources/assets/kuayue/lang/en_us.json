@@ -81,6 +81,11 @@
   "block.kuayue.tactile_paving_straight": "typhlosole(line)",
   "block.kuayue.tactile_paving_pin": "typhlosole(point)",
   "block.kuayue.flourescent_light": "Fluorescent lamp",
+  "block.kuayue.df11g_front2": "DF11G loco head",
+  "block.kuayue.df11g_carport_1": "DF11G loco carport A",
+  "block.kuayue.df11g_carport_2": "DF11G loco carport B",
+  "block.kuayue.df11g_carport_general": "DF11G loco carport",
+  "block.kuayue.df11g_carport_kuayue": "DF11G loco \"KUAYUE\"",
 
   "tips.item": "--------------------------------all items above here-------------------------------------------",
 
@@ -91,16 +96,27 @@
 
   "item.kuayue.train_diet_1.tooltip": "No one really likes to eat train meals.....(vomit)",
 
+  "block.kuayue.df11g_front2.tooltip": "§7I’am not PIG!",
+
+  "block.kuayue.widepanel_cr200j_marshalled_mid.tooltip": "R U kidding me?I'm going to throw up",
+  "block.kuayue.panel_cr200j_marshalled_top.tooltip": "R U kidding me?I'm going to throw up",
+  "block.kuayue.panel_cr200j_marshalled_bottom.tooltip": "R U kidding me?I'm going to throw up",
+  "block.kuayue.slab_cr200j_marshalled_top.tooltip": "R U kidding me?I'm going to throw up",
+
+
   "tips.group": "--------------------------------all groups above here-------------------------------------------",
 
-  "itemGroup.item_group_main": "LeapEra Struct",
-  "itemGroup.item_group_diet": "LeapEra Foods",
-  "itemGroup.item_group_catenary": "LeapEra·catenary",
-  "itemGroup.item_group_ground": "Leap·Station System",
-  "itemGroup.item_group_normal_speed_passage_carriage": "normal speed passage carriage",
+  "itemGroup.item_group_main": "Kuayue Struct",
+  "itemGroup.item_group_diet": "Kuayue Foods",
+  "itemGroup.item_group_catenary": "Kuayue catenary",
+  "itemGroup.item_group_ground": "Kuayue Station System",
+  "itemGroup.item_group_normal_speed_passage_carriage": "Kuayue Normal speed passage carriage",
+  "itemGroup.item_locos": "LeapEra Locos",
 
 
   "tips.sound": "--------------------------------all sounds above here-------------------------------------------",
 
-  "sounds.kuayue.crossing_ringing": "Cation:TRAINS!"
+  "sounds.kuayue.crossing_ringing": "Cation:TRAINS!",
+
+  "": "never gonna give you up"
 }

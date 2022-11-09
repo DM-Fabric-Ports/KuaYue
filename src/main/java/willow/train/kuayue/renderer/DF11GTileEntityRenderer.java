@@ -38,7 +38,6 @@ public class DF11GTileEntityRenderer extends SafeTileEntityRenderer<DF11GFrontTi
     }
 
 
-
     private float D2A(Direction d){
         return switch (d) {
             case EAST -> 270;

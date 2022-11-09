@@ -4,7 +4,6 @@ import com.google.common.base.Supplier;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,6 +23,8 @@ public class ItemInit {
 
     public static final RegistryObject<Item> SERIES_25_LOGOS = register("series25_logos",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LOCO_LOGOS = register("loco_logos",
+            () -> new Item(new Item.Properties()));
 
     //火车餐1
     public static final RegistryObject<Item> TRAIN_DIET_1 = register("train_diet_1",
@@ -41,8 +42,8 @@ public class ItemInit {
 //            () -> new SignItem(new Item.Properties().tab(Main.KUAYUE_MAIN).stacksTo(16),
 //                    BlockInit.TRAIN_PANEL_SIGN_BLOCK1.get(), BlockInit.TRAIN_PANEL_SIGN_BLOCK.get()));
 
-    public static final RegistryObject<Item> DF11G_BOGEY_ITEM = ITEMS.register("df11g_bogey",
-            () -> new BlockItem(KYCreateBlock.DF11G_BOGEY.get(),new Item.Properties().tab(Main.KUAYUE_DIET)));
+//    public static final RegistryObject<Item> DF11G_BOGEY_ITEM = ITEMS.register("df11g_bogey",
+//            () -> new BlockItem(KYCreateBlock.DF11G_BOGEY.get(),new Item.Properties().tab(Main.KUAYUE_DIET)));
 //public static final RegistryObject<Item> TRAIN_PANEL_SIGN_ITEM = ITEMS.register("train_panel_sign_item",
 //        () -> new BlockItem(BlockInit.TRAIN_PANEL_SIGN_BLOCK.get(), new Item.Properties().tab(Main.KUAYUE_MAIN)));
     private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
