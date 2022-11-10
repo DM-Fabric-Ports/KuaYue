@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import willow.train.kuayue.Items.foods.Food1;
 import willow.train.kuayue.Main;
+import willow.train.kuayue.effect.EffectInit;
 
 public class ItemInit {
     public static final Logger LOGGER = LoggerFactory.getLogger("KuaYue");
@@ -32,6 +33,7 @@ public class ItemInit {
                     new FoodProperties.Builder().nutrition(4).saturationMod(2.5F).
                     effect(() -> new MobEffectInstance(MobEffects.HUNGER, 1000, 0,false,true), 1.0F).
                     effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 1000, 0,false,true), 1.0F).
+                    effect(() -> new MobEffectInstance(EffectInit.NOODLE_SMELL.get(), 2000, 0,false,true), 1.0F).
                     alwaysEat().alwaysEat().build())));
 //   public static final RegistryObject<Item> TRAIN_PANEL_SIGN_ITEM = register("train_panel_sign_item",
 //            () -> new SignItem(new Item.Properties().tab(Main.KUAYUE_MAIN),

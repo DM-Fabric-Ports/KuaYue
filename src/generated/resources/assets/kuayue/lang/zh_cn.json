@@ -72,7 +72,7 @@
   "block.kuayue.widepanel_cr200j_marshalled_mid": "东福绿CR200J拖车窗户",
   "block.kuayue.panel_cr200j_marshalled_top": "东福绿CR200J拖车上厢板",
   "block.kuayue.panel_cr200j_marshalled_bottom": "东福绿CR200J拖车下厢板",
-  "block.kuayue.slab_cr200j_marshalled_top": "东福绿CR200J拖车窗户",
+  "block.kuayue.slab_cr200j_marshalled_top": "东福绿CR200J拖车地板",
 
   "block.kuayue.switch_off_sign": "断",
   "block.kuayue.switch_on_sign": "合",
@@ -117,6 +117,10 @@
   "tips.sound": "--------------------------------以下是音效-------------------------------------------",
 
   "sounds.kuayue.crossing_ringing": "道口:小心火车",
+
+  "tips.effect": "--------------------------------all effect above here-------------------------------------------",
+
+  "effect.kuayue.noodle_smell": "难闻的泡面味",
 
   "": "此去，二百由旬↑↑"
 }

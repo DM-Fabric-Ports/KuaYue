@@ -19,6 +19,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import willow.train.kuayue.effect.EffectInit;
 import willow.train.kuayue.init.*;
 import willow.train.kuayue.renderer.TrainPanelSignRenderer;
 import willow.train.kuayue.sounds.ModSounds;
@@ -80,6 +81,8 @@ public class Main {
         BlockEntitiesInit.BLOCK_ENTITIES.register(bus);
 
         ModSounds.register(bus);
+
+        EffectInit.rigister(bus);
 
         KYCreateBlock.register();
         KYCreateEntities.register();
