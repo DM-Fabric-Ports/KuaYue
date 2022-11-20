@@ -41,6 +41,22 @@ public class KYCreateBlock {
 
                     .register();
 
+
+    public static final BlockEntry<DF11GFrontBlock> HXD3D_FRONT_BLOCK =
+            LocoREGISTRATE.block("hxd3d_front", DF11GFrontBlock::new)
+                    .initialProperties(SharedProperties::softMetal)
+                    .properties(p -> p.color(MaterialColor.COLOR_BLUE))
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .transform(axeOrPickaxe())
+                    //.blockstate(BlockStateGen.horizontalBlockProvider(true))
+                    .transform(BlockStressDefaults.setImpact(2.0))
+                    //.onRegister(CreateRegistrate.connectedTextures(CrafterCTBehaviour::new))
+                    .addLayer(() -> RenderType::cutoutMipped)
+                    .item(ToolTipsItemHelper::new)
+                    .transform(customItemModel())
+                    .register();
+
+
     public static final BlockEntry<DF11GBogeyBlock> DF11G_BOGEY =
             REGISTRATE.block("df11g_bogey", p -> new DF11GBogeyBlock(p, true))
                     .properties(p -> p.color(MaterialColor.PODZOL))
