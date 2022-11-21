@@ -428,30 +428,30 @@ public class BlockInit {
 //                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),object -> () -> new BlockItem(object.get(),
 //                    new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
-    public static final RegistryObject<CarPortBlockBGKZ> DF11G_CARPORT_1 = register("df11g_carport_1",
-            () -> new CarPortBlockBGKZ(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
-                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+    public static final RegistryObject<DF11GMirrorCarportBlock> DF11G_CARPORT_1 = register("df11g_carport_1",
+            () -> new DF11GMirrorCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),1),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
-    public static final RegistryObject<CarPortBlockBGKZ> DF11G_CARPORT_2 = register("df11g_carport_2",
-            () -> new CarPortBlockBGKZ(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
-                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+    public static final RegistryObject<DF11GMirrorCarportBlock> DF11G_CARPORT_2 = register("df11g_carport_2",
+            () -> new DF11GMirrorCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),1),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
-    public static final RegistryObject<CarPortBlockBGKZ> DF11G_CARPORT_GENERAL = register("df11g_carport_general",
-            () -> new CarPortBlockBGKZ(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
-                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+    public static final RegistryObject<DF11GCarportBlock> DF11G_CARPORT_GENERAL = register("df11g_carport_general",
+            () -> new DF11GCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),1),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
-    public static final RegistryObject<CarPortBlockBGKZ> DF11G_CARPORT_KUAYUE = register("df11g_carport_kuayue",
-            () -> new CarPortBlockBGKZ(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
-                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+    public static final RegistryObject<DF11GCarportBlock> DF11G_CARPORT_KUAYUE = register("df11g_carport_kuayue",
+            () -> new DF11GCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),3),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
     public static final RegistryObject<DF11GPanel3Wide> DF11G_PANEL_KUAYUE = register("df11g_panel_kuayue",
             () -> new DF11GPanel3Wide(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
-                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
-            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),3),
+            object -> () -> new ToolTipsItemHelper(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
     public static final RegistryObject<PanelBlock2> DF11G_PANEL_GENERAL = register("df11g_panel_general",
             () -> new PanelBlock2(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
@@ -463,9 +463,37 @@ public class BlockInit {
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
+    public static final RegistryObject<PanelBlock2> DF11G_PANEL_SHADES = register("df11g_panel_shades",
+            () -> new PanelBlock2(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+    public static final RegistryObject<PanelBlock2> DF11G_PANEL_MID_WINDOW= register("df11g_panel_mid_window",
+            () -> new PanelBlock2(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+    public static final RegistryObject<PanelBlock2> DF11G_PANEL_MID_SHADES = register("df11g_panel_mid_shades",
+            () -> new PanelBlock2(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+//df11g_panel_cr
+public static final RegistryObject<DF11GPanel3Wide> DF11G_PANEL_CR = register("df11g_panel_cr",
+        () -> new DF11GPanel3Wide(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),3),
+        object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+
+    public static final RegistryObject<DF11GMirrorCarportBlock> DF11G_PANEL_MID_FRONT_2= register("df11g_panel_mid_front_2",
+            () -> new DF11GMirrorCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),2),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+//PanelBlock25Side
+public static final RegistryObject<PanelBlock25Side> DF11G_PANEL_MID_FRONT = register("df11g_panel_mid_front",
+        () -> new PanelBlock25Side(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion()),
+        object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(final String name,
                                                                      final Supplier<? extends T> block) {
-        LOGGER.info("rigister block:"+name);
+        //LOGGER.info("rigister block:"+name);
         return BLOCKS.register(name, block);
 
     }

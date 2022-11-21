@@ -88,6 +88,15 @@
   "block.kuayue.df11g_carport_2": "DF11G车棚2",
   "block.kuayue.df11g_carport_general": "DF11G通用车棚",
   "block.kuayue.df11g_carport_kuayue": "DF11G车棚\"KUAYUE\"",
+  "block.kuayue.df11g_panel_kuayue":"DF11G下厢板\"跨越\"",
+  "block.kuayue.df11g_panel_general":"DF11G通用下厢板",
+  "block.kuayue.df11g_panel_mid_general":"DF11G通用中厢板",
+  "block.kuayue.df11g_panel_cr": "DF11G中厢板-路徽",
+  "block.kuayue.df11g_panel_mid_front": "DF11G中厢板1",
+  "block.kuayue.df11g_panel_mid_front_2": "DF11G中厢板2",
+  "block.kuayue.df11g_panel_shades": "DF11G下百叶扇",
+  "block.kuayue.df11g_panel_mid_shades": "DF11G中百叶扇",
+  "block.kuayue.df11g_panel_mid_window": "DF11G设备间窗户",
 
   "tips.item": "--------------------------------以下是物品-------------------------------------------",
 
@@ -99,6 +108,12 @@
   "item.kuayue.train_diet_1.tooltip": "不会真有人喜欢吃火车餐吧，不会吧不会吧",
 
   "block.kuayue.df11g_front2.tooltip": "§7才不是猪头!",
+  "block.kuayue.df11g_panel_kuayue.tooltip":"§7抹去的只是油漆,而历史也终究不会忘记......",
+
+  "block.kuayue.widepanel_cr200j_marshalled_mid.tooltip": "开什么玩笑，要吐了",
+  "block.kuayue.panel_cr200j_marshalled_top.tooltip": "开什么玩笑，要吐了",
+  "block.kuayue.panel_cr200j_marshalled_bottom.tooltip": "开什么玩笑，要吐了",
+  "block.kuayue.slab_cr200j_marshalled_top.tooltip": "开什么玩笑，要吐了",
 
   "tips.group": "--------------------------------以下是分组-------------------------------------------",
 
@@ -108,11 +123,6 @@
   "itemGroup.item_group_ground": "跨越·地面系统",
   "itemGroup.item_group_normal_speed_passage_carriage": "跨越·普速客车组件",
   "itemGroup.item_locos": "跨越·机车组件",
-
-  "block.kuayue.widepanel_cr200j_marshalled_mid.tooltip": "开什么玩笑，要吐了",
-  "block.kuayue.panel_cr200j_marshalled_top.tooltip": "开什么玩笑，要吐了",
-  "block.kuayue.panel_cr200j_marshalled_bottom.tooltip": "开什么玩笑，要吐了",
-  "block.kuayue.slab_cr200j_marshalled_top.tooltip": "开什么玩笑，要吐了",
 
   "tips.sound": "--------------------------------以下是音效-------------------------------------------",
 

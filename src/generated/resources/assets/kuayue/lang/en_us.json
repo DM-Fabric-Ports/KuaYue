@@ -86,6 +86,15 @@
   "block.kuayue.df11g_carport_2": "DF11G loco carport B",
   "block.kuayue.df11g_carport_general": "DF11G loco carport",
   "block.kuayue.df11g_carport_kuayue": "DF11G loco \"KUAYUE\"",
+  "block.kuayue.df11g_panel_kuayue":"DF11G buttom panel \"跨越\"",
+  "block.kuayue.df11g_panel_general":"DF11G general bottom panel",
+  "block.kuayue.df11g_panel_mid_general":"DF11G general middle panel",
+  "block.kuayue.df11g_panel_cr": "DF11G general middle panel - CR logo",
+  "block.kuayue.df11g_panel_mid_front": "DF11G middle panel 1",
+  "block.kuayue.df11g_panel_mid_front_2": "DF11G middle panel 2",
+  "block.kuayue.df11g_panel_shades": "DF11G bottom louver",
+  "block.kuayue.df11g_panel_mid_shades": "DF11G middle louver",
+  "block.kuayue.df11g_panel_mid_window": "DF11G middle window",
 
   "tips.item": "--------------------------------all items above here-------------------------------------------",
 
@@ -97,12 +106,12 @@
   "item.kuayue.train_diet_1.tooltip": "No one really likes to eat train meals.....(vomit)",
 
   "block.kuayue.df11g_front2.tooltip": "§7I’am not PIG!",
+  "block.kuayue.df11g_panel_kuayue.tooltip":"§7What is erased is only paint, and history will never be forgotten....",
 
   "block.kuayue.widepanel_cr200j_marshalled_mid.tooltip": "R U kidding me?I'm going to throw up",
   "block.kuayue.panel_cr200j_marshalled_top.tooltip": "R U kidding me?I'm going to throw up",
   "block.kuayue.panel_cr200j_marshalled_bottom.tooltip": "R U kidding me?I'm going to throw up",
   "block.kuayue.slab_cr200j_marshalled_top.tooltip": "R U kidding me?I'm going to throw up",
-
 
   "tips.group": "--------------------------------all groups above here-------------------------------------------",
 
