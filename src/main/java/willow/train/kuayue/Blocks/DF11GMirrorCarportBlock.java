@@ -18,9 +18,9 @@ public class DF11GMirrorCarportBlock extends PanelBlock25Side{
 
 
     protected static final VoxelShape NORTH_AABB2 =Block.box(0, 0, -1, 16, 32, 1.25);
-    protected static final VoxelShape EAST_AABB2 = Block.box(-1, 0, 0, 1.25, 32, 16);
+    protected static final VoxelShape WEST_AABB2 = Block.box(-1, 0, 0, 1.25, 32, 16);
     protected static final VoxelShape SOUTH_AABB2 =Block.box(0, 0, 14.75, 16, 32, 17);
-    protected static final VoxelShape WEST_AABB2 = Block.box(14.75, 0, 0, 17, 32, 16);
+    protected static final VoxelShape EAST_AABB2 = Block.box(14.75, 0, 0, 17, 32, 16);
 
     protected static final VoxelShape SOUTH_AABB3 = Shapes.or(Block.box(-16, 0, 0, 32, 8, 16), Block.box(-16, 8, 8, 32, 16, 16));
     protected static final VoxelShape WEST_AABB3 = Shapes.or(Block.box(0, 0, -16, 16, 8, 32), Block.box(0, 8, -16, 8, 16, 32));
