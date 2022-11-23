@@ -443,6 +443,19 @@ public class BlockInit {
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),1),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
 
+    public static final RegistryObject<DF11GCarportBlock> DF11G_CARPORT_LOUVER = register("df11g_carport_louver",
+            () -> new DF11GCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),1),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+    public static final RegistryObject<DF11GCarportBlock> DF11G_CARPORT_LOUVER_2 = register("df11g_carport_louver_2",
+            () -> new DF11GCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),1),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+    public static final RegistryObject<DF11GCarportBlock> DF11G_CARPORT_LOUVER_3 = register("df11g_carport_louver_3",
+            () -> new DF11GCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
+                    .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),1),
+            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Main.KUAYUE_LOCOS)));
+
     public static final RegistryObject<DF11GCarportBlock> DF11G_CARPORT_KUAYUE = register("df11g_carport_kuayue",
             () -> new DF11GCarportBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.NONE).strength(3.0f)
                     .sound(SoundType.COPPER).requiresCorrectToolForDrops().noOcclusion(),3),
