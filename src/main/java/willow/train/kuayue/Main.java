@@ -20,14 +20,13 @@ import willow.train.kuayue.init.BlockInit;
 import willow.train.kuayue.init.ItemInit;
 import willow.train.kuayue.init.KYCreateBlock;
 import willow.train.kuayue.init.KYCreateEntities;
-import willow.train.kuayue.init.WoodTypeInit;
 import willow.train.kuayue.sounds.ModSounds;
 
 public class Main implements ModInitializer, ClientModInitializer {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger("KuaYue");
 	public static final String MOD_ID = "kuayue";
-	public static final CreativeModeTab KUAYUE_MAIN = FabricItemGroupBuilder.create(asResource(MOD_ID))
+	public static final CreativeModeTab KUAYUE_MAIN = FabricItemGroupBuilder.create(asResource("item_group_main"))
 			.icon(() -> new ItemStack(BlockInit.CR_LOGO.get())).build();
 	public static final CreativeModeTab KUAYUE_LOCOS = FabricItemGroupBuilder.create(asResource("item_locos"))
 			.icon(() -> new ItemStack(ItemInit.LOCO_LOGOS.get())).build();
