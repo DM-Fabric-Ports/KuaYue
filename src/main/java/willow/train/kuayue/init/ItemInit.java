@@ -62,7 +62,6 @@ public class ItemInit {
 	// () -> new BlockItem(BlockInit.TRAIN_PANEL_SIGN_BLOCK.get(), new
 	// Item.Properties().tab(Main.KUAYUE_MAIN)));
 	private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item) {
-		LOGGER.info("rigister item:" + name);
 		return ITEMS.register(name, item);
 	}
 

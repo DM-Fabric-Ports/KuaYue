@@ -767,7 +767,6 @@ public class BlockInit {
 			Function<RegistryObject<T>, Supplier<? extends Item>> item) {
 		RegistryObject<T> obj = registerBlock(name, block);
 		ITEMS.register(name, item.apply(obj));
-		LOGGER.info("rigister block:" + name);
 		return obj;
 	}
 
@@ -776,7 +775,6 @@ public class BlockInit {
 			Function<RegistryObject<T>, Supplier<? extends Item>> item) {
 		RegistryObject<T> obj = registerBlock(name, block);
 		// ITEMS.register(name, item.apply(obj));
-		LOGGER.info("rigister block:" + name);
 		return obj;
 	}
 
